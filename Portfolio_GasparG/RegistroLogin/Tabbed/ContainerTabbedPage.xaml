@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:locals="clr-namespace:Portfolio_GasparG.RegistroLogin.Tabbed"
+            x:Class="Portfolio_GasparG.RegistroLogin.Tabbed.ContainerTabbedPage"      
+            BarTextColor="Black" BarBackgroundColor="white" SelectedTabColor="Black" UnselectedTabColor="#C3C3C3"
+            NavigationPage.HasNavigationBar="False">
+
+    <locals:MainPage Title="Mercado" IconImageSource="market.png" />
+    <locals:Portfolio Title="Portfolio" IconImageSource="wallet.png" />
+    <locals:Page3 Title="Perfil" IconImageSource="profile.png" />   
+    
+</TabbedPage>

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Portfolio_GasparG.ViewsCoin.Alerts">
+
+
+
+
+     <Grid RowSpacing="0" BackgroundColor="Black">
+
+    
+
+    
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+             <RowDefinition Height="50"/>
+             <RowDefinition Height="Auto"/>
+             <RowDefinition Height="*"/>
+             <RowDefinition Height="50"/>
+         </Grid.RowDefinitions>
+
+         <BoxView BackgroundColor="Black" Grid.Row="0"></BoxView>
+
+         <Grid Grid.Row="1" BackgroundColor="Black" HorizontalOptions="Center">
+              <Button Clicked="AddAlert" BackgroundColor="DodgerBlue" Text="Add Alert" TextColor="Black"></Button>                                        
+         </Grid>
+        
+
+
+
+
+                  <ListView ItemsSource="{Binding AlertsList}" Grid.Row="3" BackgroundColor="Black">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+
+                         
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+                  <Grid Grid.Row="4" BackgroundColor="Black" Padding="0,5,0,0">
+                                     <Grid.ColumnDefinitions>
+                                             <ColumnDefinition Width="25*"/>
+                                             <ColumnDefinition Width="25*"/>
+                                             <ColumnDefinition Width="25*"/>
+                                             <ColumnDefinition Width="25*"/>          
+                                      </Grid.ColumnDefinitions>
+
+                                  
+                                      <StackLayout Grid.Column="0" BackgroundColor="Black">
+                                             <Button BackgroundColor="#303036" Text="Coins" Clicked="MainPage" TextColor="WhiteSmoke"></Button>
+                                      </StackLayout>
+                                      <StackLayout Grid.Column="1" BackgroundColor="Black">
+                                            <Button BackgroundColor="#303036" Text="Portfolio" Clicked="Portfolio" TextColor="WhiteSmoke"></Button>
+                                      </StackLayout>
+                                      <StackLayout Grid.Column="2" BackgroundColor="Black">
+                                            <Button BackgroundColor="#303036" Text="Alerts" TextColor="WhiteSmoke"></Button>
+                                      </StackLayout>
+                                      <!--<StackLayout Grid.Column="3" BackgroundColor="Black">
+                                            <Button BackgroundColor="#303036" Text="Settings" Clicked="Settings" TextColor="WhiteSmoke"></Button>
+                                      </StackLayout>-->
+                  </Grid>
+
+        
+
+
+          </Grid>
+
+
+</ContentPage>

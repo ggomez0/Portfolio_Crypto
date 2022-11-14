@@ -1,0 +1,96 @@
+﻿<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Portfolio_GasparG.ViewsCoin.Portfolio"
+             BackgroundColor="Black">
+
+     <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+             <RowDefinition Height="40"/>  <!--10 on android-->
+             <RowDefinition Height="50"/>
+             <RowDefinition Height="7"/>
+             <RowDefinition Height="Auto"/>
+             <RowDefinition Height="70"/>   <!--50 on android-->
+         </Grid.RowDefinitions>
+
+
+
+         <BoxView BackgroundColor="Black" Grid.Row="0"></BoxView>
+  
+     
+
+         <Grid Grid.Row="1" BackgroundColor="Black" HorizontalOptions="Center">
+
+              <Grid.ColumnDefinitions>
+                 <ColumnDefinition Width="10*"/>
+                 <ColumnDefinition Width="40*"/>
+                 <ColumnDefinition Width="40*"/>
+                 <ColumnDefinition Width="10*"/>
+              </Grid.ColumnDefinitions>
+
+
+              <Button Grid.Column="1" Clicked="showAddPortfolio" BackgroundColor="DodgerBlue" Text="Add Portfolio" TextColor="Black"></Button>
+              <Button Grid.Column="2" Clicked="showAllPortfolio" BackgroundColor="#4dff88" Text="View All" TextColor="Black"></Button>
+         </Grid>
+         
+
+         <BoxView BackgroundColor="Black" Grid.Row="2"></BoxView>
+
+                <ListView ItemsSource="{Binding Portfolios}" Grid.Row="3" BackgroundColor="Black">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+
+                                <Grid RowSpacing="0">
+
+                                        <Grid.ColumnDefinitions>
+                                             <ColumnDefinition Width="40*"/>
+                                             <ColumnDefinition Width="20*"/>
+                                             <ColumnDefinition Width="20*"/>
+                                             <ColumnDefinition Width="20*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                  
+                                           <Label Grid.Column="0" Text="{Binding PortfolioName}" TextColor="WhiteSmoke" TranslationY="8" TranslationX="8"></Label>
+                                    
+                                           <Button Grid.Column="1" Clicked="View" BackgroundColor="#4dff88" Text="Ver" TextColor="Black"></Button> 
+                                       
+                                           <Button Grid.Column="2" Clicked="Delete" BackgroundColor="#ff6666" Text="Eliminar" TextColor="Black"></Button> 
+                                             
+                               </Grid>
+                                                                                                                                  
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+   
+
+                  <Grid Grid.Row="4" BackgroundColor="Black" Padding="0,5,0,0">
+                                     <Grid.ColumnDefinitions>
+                                             <ColumnDefinition Width="25*"/>
+                                             <ColumnDefinition Width="25*"/>
+                                             <ColumnDefinition Width="25*"/>
+                                             <ColumnDefinition Width="25*"/>          
+                                      </Grid.ColumnDefinitions>
+
+                                  
+                                      <StackLayout Grid.Column="0" BackgroundColor="Black">
+                                             <Button BackgroundColor="#303036" Text="Coins" Clicked="MainPage" TextColor="WhiteSmoke"></Button>
+                                      </StackLayout>
+                                      <StackLayout Grid.Column="1" BackgroundColor="Black">
+                                            <Button BackgroundColor="#303036" Text="Portfolio" TextColor="WhiteSmoke"></Button>
+                                      </StackLayout>
+                                      <StackLayout Grid.Column="2" BackgroundColor="Black">
+                                            <Button BackgroundColor="#303036" Text="Alerts" Clicked="Alerts" TextColor="WhiteSmoke"></Button>
+                                      </StackLayout>
+                                      <!--<StackLayout Grid.Column="3" BackgroundColor="Black">
+                                            <Button BackgroundColor="#303036" Text="Settings" Clicked="Settings" TextColor="WhiteSmoke"></Button>
+                                      </StackLayout>-->
+                  </Grid>
+
+       
+    </Grid>
+
+
+
+</ContentPage>

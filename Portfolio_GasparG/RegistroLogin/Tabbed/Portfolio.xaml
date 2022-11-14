@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Portfolio_GasparG.RegistroLogin.Tabbed.Portfolio" BackgroundColor="White">
+
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <!--10 on android-->
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="7"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="70"/>
+            <!--50 on android-->
+        </Grid.RowDefinitions>
+
+
+
+        <BoxView BackgroundColor="White" Grid.Row="0"></BoxView>
+
+
+
+        <Grid Grid.Row="1" BackgroundColor="White" HorizontalOptions="Center">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="10*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Button Grid.Column="1" Clicked="showAddPortfolio" BackgroundColor="DodgerBlue" Text="Nuevo Portfolio" TextColor="Black" FontSize="11"></Button>
+            <Button Grid.Column="2" Clicked="showAllPortfolio" BackgroundColor="#4dff88" Text="Ver Todos" TextColor="Black"></Button>
+        </Grid>
+
+
+        <BoxView BackgroundColor="White" Grid.Row="2"></BoxView>
+
+        <ListView ItemsSource="{Binding Portfolios}" Grid.Row="3" BackgroundColor="White">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <Grid RowSpacing="0">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40*"/>
+                                <ColumnDefinition Width="20*"/>
+                                <ColumnDefinition Width="20*"/>
+                                <ColumnDefinition Width="20*"/>
+                            </Grid.ColumnDefinitions>
+
+
+                            <Label Grid.Column="0" Text="{Binding PortfolioName}" TranslationY="8" TranslationX="8" TextColor="Black"></Label>
+
+                            <Button Grid.Column="1" Clicked="View" BackgroundColor="#4dff88" Text="Ver" TextColor="Black"></Button>
+
+                            <Button Grid.Column="2" Clicked="Delete" BackgroundColor="#ff6666" Text="Eliminar" TextColor="Black"></Button>
+
+                        </Grid>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

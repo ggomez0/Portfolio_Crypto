@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Portfolio_GasparG.ViewsCoin.MainPage"
+             BackgroundColor="Black">
+
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="40"/>
+             <RowDefinition Height="4"/>
+             <RowDefinition Height="70*"/>
+             <RowDefinition Height="50"/>
+          
+         </Grid.RowDefinitions>
+
+            <BoxView BackgroundColor="Black" Grid.Row="0"></BoxView>
+
+
+                                <Grid Grid.Row="1" BackgroundColor="Black">
+                                     <Grid.ColumnDefinitions>
+                                      
+                                             <ColumnDefinition Width="18*"/>
+                                             <ColumnDefinition Width="30*"/>
+                                             <ColumnDefinition Width="18*"/>
+                                             <ColumnDefinition Width="18*"/>
+                                             <ColumnDefinition Width="18*"/>
+                                      </Grid.ColumnDefinitions>
+                                            <Button Grid.Column="0" FontSize="11" Clicked="Rank_Sort" Text="Rank" BackgroundColor="#303036" TextColor="WhiteSmoke"></Button>
+                                            <Button Grid.Column="1" FontSize="11" Clicked="Coin_Sort" Text="Coin" BackgroundColor="#303036" TextColor="WhiteSmoke"></Button>
+                                            <Button Grid.Column="2" FontSize="10" Clicked="Price_Sort" Text="Precio" BackgroundColor="#303036" TextColor="WhiteSmoke"></Button>
+                                            <Button Grid.Column="3" FontSize="11" Clicked="t4hr_Change" Text="24h %" BackgroundColor="#303036" TextColor="WhiteSmoke"></Button>
+                                            <Button Grid.Column="4" FontSize="11" Clicked="s7day_Change" Text="7d %" BackgroundColor="#303036" TextColor="WhiteSmoke"></Button>
+                                </Grid>
+
+
+
+         <BoxView BackgroundColor="Black" Grid.Row="2"></BoxView>
+
+         <!--ItemsSource="{Binding CoinmarketCap_Coins}"-->
+         <!--x:Name="CoinsListView"-->
+
+               <ListView ItemsSource="{Binding CoinmarketCap_Coins}" Grid.Row="3" BackgroundColor="#1A1A1A">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+
+                               <Grid RowSpacing="0">
+
+                                        <Grid.ColumnDefinitions>
+                                             <ColumnDefinition Width="6*"/>
+                                             <ColumnDefinition Width="12*"/>
+                                             <ColumnDefinition Width="30*"/>
+                                             <ColumnDefinition Width="18*"/>
+                                             <ColumnDefinition Width="18*"/>
+                                             <ColumnDefinition Width="18*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                
+                                            <Label Grid.Column="0" Text="{Binding CoinMcapRank}" TextColor="WhiteSmoke" FontSize="Small" TranslationY="14" TranslationX="8"></Label>
+                                            <Image Grid.Column="1" Source="{Binding imagelocation}" Aspect="AspectFit"></Image>
+                                            <Label Grid.Column="2" HorizontalTextAlignment="Start" Text="{Binding name}" TextColor="WhiteSmoke" FontSize="Small" TranslationY="14"></Label>
+                                            <Label Grid.Column="3" HorizontalTextAlignment="Start" Text="{Binding price}" TextColor="WhiteSmoke" FontSize="Small" TranslationY="14"></Label>
+                                            <Label Grid.Column="4" HorizontalTextAlignment="Start" Text="{Binding PercentChange24hr}" TranslationY="14" FontSize="Small" TextColor="{Binding PercentChange24hrColor}"></Label>
+                                            <Label Grid.Column="5" HorizontalTextAlignment="Start" Text="{Binding PercentChange7day}" TranslationY="14" FontSize="Small" TextColor="{Binding PercentChange7dayColor}"></Label>
+
+                               </Grid>
+
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+         
+         <!--<BoxView BackgroundColor="Black" Grid.Row="4"></BoxView>-->
+
+                  <Grid Grid.Row="4" BackgroundColor="Black" Padding="0,5,0,0">
+                                     <Grid.ColumnDefinitions>
+                                             <ColumnDefinition Width="25*"/>
+                                             <ColumnDefinition Width="25*"/>
+                                             <ColumnDefinition Width="25*"/>
+                                             <ColumnDefinition Width="25*"/>          
+                                      </Grid.ColumnDefinitions>
+  
+                                      <Button Grid.Column="0" FontSize="11" BackgroundColor="#303036" Text="Coins" TextColor="WhiteSmoke"></Button>
+                                      <Button Grid.Column="1" FontSize="11" BackgroundColor="#303036" Text="Portfolio" Clicked="Portfolio" TextColor="WhiteSmoke"></Button>
+                                      <Button Grid.Column="2" FontSize="11" BackgroundColor="#303036" Text="Alerts" Clicked="Alerts" TextColor="WhiteSmoke"></Button>
+                                      <Button Grid.Column="3" FontSize="11" BackgroundColor="#303036" Text="Settings" Clicked="Settings" TextColor="WhiteSmoke"></Button>
+                                   
+                  </Grid>
+
+       
+    </Grid>
+
+
+</ContentPage>
